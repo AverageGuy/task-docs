@@ -120,7 +120,7 @@ Creating Tasks</h2>
 <div class="fragment"><div class="line"><a class="code" href="classSafePtr.html">SafePtr&lt;Task&gt;</a> task = <a class="code" href="classSafePtr.html">SafePtr&lt;Task&gt;</a>(<span class="keyword">new</span> <a class="code" href="classTask.html">Task</a>(callback, interval, enabled, iterations, name, runImmediately));</div>
 <div class="line"><a class="code" href="classSafePtr.html">SafePtr&lt;Task&gt;</a> task = <a class="code" href="classSafePtr.html">SafePtr&lt;Task&gt;</a>(<span class="keyword">new</span> <a class="code" href="classTask.html">Task</a>(VoidCallBack, interval, enabled, iterations, name, runImmediately));</div>
 <div class="ttc" id="aclassSafePtr_html"><div class="ttname"><a href="classSafePtr.html">SafePtr</a></div><div class="ttdoc">A safe pointer template class.</div><div class="ttdef"><b>Definition:</b> <a href="SafePtr_8h_source.html#l00020">SafePtr.h:20</a></div></div>
-<div class="ttc" id="aclassTask_html"><div class="ttname"><a href="classTask.html">Task</a></div><div class="ttdoc">Represents a schedulable task.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00083">TaskSched.h:83</a></div></div>
+<div class="ttc" id="aclassTask_html"><div class="ttname"><a href="classTask.html">Task</a></div><div class="ttdoc">Represents a schedulable task.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00081">TaskSched.h:81</a></div></div>
 </div><!-- fragment --><ul>
 <li><code>TaskCallback</code>: Function to be called (must accept a <code>Task*</code> parameter)</li>
 <li><code>VoidCallback</code>: Function to be called (no parameter)</li>
@@ -153,16 +153,16 @@ Scheduler</h2>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">    scheduler.<a class="code" href="classSched.html#a95f8b9b08bd39d6a2e9380c0d149bcd4">run</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassSched_html"><div class="ttname"><a href="classSched.html">Sched</a></div><div class="ttdoc">This class runs the scheduled tasks.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00329">TaskSched.h:330</a></div></div>
+<div class="ttc" id="aclassSched_html"><div class="ttname"><a href="classSched.html">Sched</a></div><div class="ttdoc">This class runs the scheduled tasks.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00302">TaskSched.h:303</a></div></div>
 <div class="ttc" id="aclassSched_html_a76421d3e33bc7d6f64a0acc97f9a456d"><div class="ttname"><a href="classSched.html#a76421d3e33bc7d6f64a0acc97f9a456d">Sched::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00298">TaskSched.cpp:298</a></div></div>
 <div class="ttc" id="aclassSched_html_a93c5dd97c4d77f54090d57bb3dd8209c"><div class="ttname"><a href="classSched.html#a93c5dd97c4d77f54090d57bb3dd8209c">Sched::addTask</a></div><div class="ttdeci">void addTask(SafePtr&lt; Task &gt; task)</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00301">TaskSched.cpp:301</a></div></div>
 <div class="ttc" id="aclassSched_html_a95f8b9b08bd39d6a2e9380c0d149bcd4"><div class="ttname"><a href="classSched.html#a95f8b9b08bd39d6a2e9380c0d149bcd4">Sched::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">called perodically to check if a task should be scheduled</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00322">TaskSched.cpp:322</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Examples</h1>
-<p>See the <code>examples/SkedBlink1/SkedBlink1.ino</code> file for a basic example of blinking an LED using TaskSched.</p>
+<p>See the <code>examples</code> directory for basic examples of blinking an LED using TaskSched.</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
 API Reference</h1>
-<p>For detailed API documentation, please refer to the Doxygen-generated documentation in the <code>html</code> folder.</p>
+<p>For detailed API documentation, please refer to the Doxygen-generated documentation <a href="https://averageguy.github.io/task-docs/">https://averageguy.github.io/task-docs/</a></p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Issues</h1>
 <p>If you encounter any issues or have feature requests, please open an issue on the GitHub repository.</p>

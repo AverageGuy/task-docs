@@ -159,7 +159,8 @@ template&lt;typename T &gt; </div>
 <p>Construct a new empty <a class="el" href="classSimpleList.html" title="A simple linked list implementation.">SimpleList</a> object. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00038">38</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;: head(<span class="keyword">nullptr</span>), tail(<span class="keyword">nullptr</span>), read_position(<span class="keyword">nullptr</span>), size(0) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9bca7f13518a50bfd0e68efe0e19148a"></a>
@@ -190,6 +191,12 @@ template&lt;typename T &gt; </div>
 <p>Destroy the <a class="el" href="classSimpleList.html" title="A simple linked list implementation.">SimpleList</a> object and free all allocated memory. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00043">43</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classSimpleList.html#ad3994e1a7ea53736544a19b579882032">clear</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="ttc" id="aclassSimpleList_html_ad3994e1a7ea53736544a19b579882032"><div class="ttname"><a href="classSimpleList.html#ad3994e1a7ea53736544a19b579882032">SimpleList::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Remove all elements from the list.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleList_8h_source.html#l00124">SimpleList.h:124</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="SimpleList_8h_source.html#l00124">SimpleList&lt; T &gt;::clear()</a>.</p>
 
 </div>
 </div>
@@ -223,6 +230,9 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>iterator Iterator to the first element </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00198">198</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{ <span class="keywordflow">return</span> iterator(head); }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00242">Sched::displayStatus()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00322">Sched::run()</a>.</p>
 
 </div>
 </div>
@@ -254,6 +264,18 @@ template&lt;typename T &gt; </div>
 <p>Remove all elements from the list. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00124">124</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                 {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">while</span> (head) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            Node* temp = head;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            head = head-&gt;next;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keyword">delete</span> temp;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        read_position = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        size = 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="SimpleList_8h_source.html#l00043">SimpleList&lt; T &gt;::~SimpleList()</a>.</p>
 
 </div>
 </div>
@@ -286,6 +308,9 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>iterator Iterator to the element after the last element </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00205">205</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{ <span class="keywordflow">return</span> iterator(<span class="keyword">nullptr</span>); }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00242">Sched::displayStatus()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00322">Sched::run()</a>.</p>
 
 </div>
 </div>
@@ -318,6 +343,11 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>size_t The number of elements </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00117">117</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                            {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> size;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00232">Sched::getSize()</a>.</p>
 
 </div>
 </div>
@@ -350,7 +380,10 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true if read_position is null, false otherwise </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00108">108</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                              {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> read_position == <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6139229999e698847399b0e4b9a31874"></a>
@@ -381,7 +414,22 @@ template&lt;typename T &gt; </div>
 <p>Remove the first element from the list. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00066">66</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (head) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Node* temp = head;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            head = head-&gt;next;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (read_position == temp) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                read_position = head;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">delete</span> temp;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            --size;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (!head) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                read_position = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a02211bf8584c6f0f4c802d46edd08691"></a>
@@ -419,6 +467,18 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00052">52</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                   {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Node* new_node = <span class="keyword">new</span> Node(value);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (!head) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            head = tail = read_position = new_node;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            tail-&gt;next = new_node;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            tail = new_node;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ++size;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00301">Sched::addTask()</a>.</p>
 
 </div>
 </div>
@@ -451,7 +511,15 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>T The current element (empty SafePtr&lt;Task&gt; if read_position is null) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00087">87</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;             {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (read_position) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            T value = read_position-&gt;data;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            read_position = read_position-&gt;next;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> T();  <span class="comment">// Return empty SafePtr&lt;Task&gt;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa2519ce70e5a9de920f6afd4a70e7336"></a>
@@ -482,7 +550,10 @@ template&lt;typename T &gt; </div>
 <p>Reset the read position to the beginning of the list. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00099">99</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        read_position = head;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

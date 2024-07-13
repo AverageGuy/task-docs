@@ -146,7 +146,8 @@ template&lt;typename T &gt; </div>
 <p>Default constructor that initializes both <code>ptr</code> and <code>refCount</code> to nullptr. </p>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00049">49</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;: ptr(<span class="keyword">nullptr</span>), refCount(<span class="keyword">nullptr</span>) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af57ecf85f30ce06037ae19b6888256f9"></a>
@@ -185,7 +186,8 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00058">58</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;: ptr(p), refCount(p ? <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>(1) : <span class="keyword">nullptr</span>) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa6f665c9c222ebf0b8cc153112e6189a"></a>
@@ -224,7 +226,12 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00067">67</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                : ptr(other.ptr), refCount(other.refCount) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (refCount) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      (*refCount)++;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7c1135a19fd0866ffcb8436c799bf5b4"></a>
@@ -255,7 +262,10 @@ template&lt;typename T &gt; </div>
 <p>Destructor that calls the <code>release()</code> function to ensure proper memory management. </p>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00098">98</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;             {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    release();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -288,7 +298,8 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The raw pointer to the managed data (can be nullptr). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00107">107</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{ <span class="keywordflow">return</span> ptr; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a652b6f796ca679af340441c71316975b"></a>
@@ -320,7 +331,8 @@ template&lt;typename T &gt; </div>
 <p>This operator allows using a <code><a class="el" href="classSafePtr.html" title="A safe pointer template class.">SafePtr</a></code> object in a boolean context. It returns true if <code>ptr</code> is not null (meaning it points to valid data) and false otherwise. </p>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00134">134</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{ <span class="keywordflow">return</span> ptr != <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6e6636778ce0a0f4b63853ae82b672af"></a>
@@ -353,7 +365,8 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The value pointed to by the managed data. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00116">116</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> *ptr; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaf782dfa07867873a87af9c120af0b72"></a>
@@ -386,7 +399,8 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The address of the value pointed to by the managed data. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00126">126</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{ <span class="keywordflow">return</span> ptr; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a256ec9029ce26e43cc265a5995f66382"></a>
@@ -426,7 +440,18 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the current <code><a class="el" href="classSafePtr.html" title="A safe pointer template class.">SafePtr</a></code> object. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SafePtr_8h_source.html#l00083">83</a> of file <a class="el" href="SafePtr_8h_source.html">SafePtr.h</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                           {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      release();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      ptr = other.ptr;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      refCount = other.refCount;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">if</span> (refCount) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        (*refCount)++;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
