@@ -64,7 +64,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classTask-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Task Class Reference</div>  </div>
@@ -90,9 +90,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6e716982f852ca3c0a6bed04fefc7503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32523f7c8c3b6bcef673e6e2903a6cba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a32523f7c8c3b6bcef673e6e2903a6cba">Task</a> (<a class="el" href="classTask.html#a1670163c179fbfa1615666e79536567a">VoidCallback</a> func, unsigned long interval=5000, bool enabled=false, int iterations=0, const char *name=&quot;Unk&quot;, bool runImmediately=false)</td></tr>
 <tr class="separator:a32523f7c8c3b6bcef673e6e2903a6cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f125560c0150c8d13a1d489f866e288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSafePtr.html">SafePtr</a>&lt; <a class="el" href="classTask.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a1f125560c0150c8d13a1d489f866e288">getSafePtr</a> ()</td></tr>
-<tr class="memdesc:a1f125560c0150c8d13a1d489f866e288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classSafePtr.html" title="A safe pointer template class.">SafePtr</a> to this <a class="el" href="classTask.html" title="Represents a schedulable task.">Task</a>.  <a href="classTask.html#a1f125560c0150c8d13a1d489f866e288">More...</a><br /></td></tr>
-<tr class="separator:a1f125560c0150c8d13a1d489f866e288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe0b84aae9c9451e5f8fcc3b83db75da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#abe0b84aae9c9451e5f8fcc3b83db75da">isFirstIteration</a> ()</td></tr>
 <tr class="memdesc:abe0b84aae9c9451e5f8fcc3b83db75da"><td class="mdescLeft">&#160;</td><td class="mdescRight">return true if this is the first iteration  <a href="classTask.html#abe0b84aae9c9451e5f8fcc3b83db75da">More...</a><br /></td></tr>
 <tr class="separator:abe0b84aae9c9451e5f8fcc3b83db75da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,9 +120,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d1481e4bdb6c9474eac146456a8b2fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a7d1481e4bdb6c9474eac146456a8b2fd">setName</a> (String)</td></tr>
 <tr class="memdesc:a7d1481e4bdb6c9474eac146456a8b2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">give the task a new name  <a href="classTask.html#a7d1481e4bdb6c9474eac146456a8b2fd">More...</a><br /></td></tr>
 <tr class="separator:a7d1481e4bdb6c9474eac146456a8b2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3182ff28134356c7502d09d533cdf267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a3182ff28134356c7502d09d533cdf267">runIt</a> ()</td></tr>
-<tr class="memdesc:a3182ff28134356c7502d09d533cdf267"><td class="mdescLeft">&#160;</td><td class="mdescRight">function used by the schedule to run this task, shouldn't be called by user  <a href="classTask.html#a3182ff28134356c7502d09d533cdf267">More...</a><br /></td></tr>
-<tr class="separator:a3182ff28134356c7502d09d533cdf267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44a50f64103623564e81c51a2a54986e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a44a50f64103623564e81c51a2a54986e">showInit</a> ()</td></tr>
 <tr class="memdesc:a44a50f64103623564e81c51a2a54986e"><td class="mdescLeft">&#160;</td><td class="mdescRight">display stuff  <a href="classTask.html#a44a50f64103623564e81c51a2a54986e">More...</a><br /></td></tr>
 <tr class="separator:a44a50f64103623564e81c51a2a54986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,10 +154,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6fea462a4230640e52b3d5a6bd4f04b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a string with a formatted time  <a href="classTask.html#a6fea462a4230640e52b3d5a6bd4f04b1">More...</a><br /></td></tr>
 <tr class="separator:a6fea462a4230640e52b3d5a6bd4f04b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a5b560ef95d5ba654ed98b28ef84eefb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a5b560ef95d5ba654ed98b28ef84eefb7">mIntI</a></td></tr>
-<tr class="separator:a5b560ef95d5ba654ed98b28ef84eefb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a1c394471833feb83c62bedb9ee3c0c50"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTask.html#a1c394471833feb83c62bedb9ee3c0c50">Sched</a></td></tr>
+<tr class="separator:a1c394471833feb83c62bedb9ee3c0c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a schedulable task. </p>
@@ -182,7 +176,7 @@ Public Attributes</h2></td></tr>
 <div class="line">450 <a class="code" href="classTask.html">Task</a>       On2,  Enabled? 0, Diff 00:15.735, Interval 00:02.000, RI 1</div>
 <div class="line">450 <a class="code" href="classTask.html">Task</a>       On1,  Enabled? 0, Diff 00:15.735, Interval 00:00.100, RI 0</div>
 <div class="line">450 <a class="code" href="classTask.html">Task</a>        On,  Enabled? 1, Diff 00:01.721, Interval 00:01.000, RI 0</div>
-<div class="ttc" id="aclassTask_html"><div class="ttname"><a href="classTask.html">Task</a></div><div class="ttdoc">Represents a schedulable task.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00081">TaskSched.h:81</a></div></div>
+<div class="ttc" id="aclassTask_html"><div class="ttname"><a href="classTask.html">Task</a></div><div class="ttdoc">Represents a schedulable task.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00080">TaskSched.h:80</a></div></div>
 <div class="ttc" id="aclassTask_html_a6e716982f852ca3c0a6bed04fefc7503"><div class="ttname"><a href="classTask.html#a6e716982f852ca3c0a6bed04fefc7503">Task::Task</a></div><div class="ttdeci">Task(TaskCallback func, unsigned long interval=5000, bool enabled=false, int iterations=0, const char *name=&quot;Unk&quot;, bool runImmediately=false)</div><div class="ttdoc">Constructs a new Task.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00007">TaskSched.cpp:7</a></div></div>
 </div><!-- fragment --></td></tr>
   </table>
@@ -190,7 +184,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <p>The <a class="el" href="classTask.html" title="Represents a schedulable task.">Task</a> class encapsulates a function to be called at regular intervals, along with parameters controlling its execution. </p>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00081">81</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00080">80</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a435853ebd95761dec95313b38bc5056e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a435853ebd95761dec95313b38bc5056e">&#9670;&nbsp;</a></span>TaskCallback</h2>
@@ -204,7 +198,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00085">85</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00092">92</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
 
 </div>
 </div>
@@ -220,7 +214,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00086">86</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00093">93</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
 
 </div>
 </div>
@@ -312,12 +306,12 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            mLastStartTime=millis();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            mIterationCount=0;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="ttc" id="aclassInitialState_html_a0a23c5447f2dadf65baaff2cfa1a274f"><div class="ttname"><a href="classInitialState.html#a0a23c5447f2dadf65baaff2cfa1a274f">InitialState::mEnabled</a></div><div class="ttdeci">bool mEnabled</div><div class="ttdoc">saved enable flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00032">TaskSched.h:32</a></div></div>
-<div class="ttc" id="aclassInitialState_html_a25cd6538cde791f1897a86f322960293"><div class="ttname"><a href="classInitialState.html#a25cd6538cde791f1897a86f322960293">InitialState::mIterations</a></div><div class="ttdeci">unsigned long mIterations</div><div class="ttdoc">saved run iterations count</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00042">TaskSched.h:42</a></div></div>
-<div class="ttc" id="aclassInitialState_html_a31fee8f68667d2a32b5b884cc50aa2f7"><div class="ttname"><a href="classInitialState.html#a31fee8f68667d2a32b5b884cc50aa2f7">InitialState::mRunImmediately</a></div><div class="ttdeci">bool mRunImmediately</div><div class="ttdoc">saved run immediately flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00037">TaskSched.h:37</a></div></div>
-<div class="ttc" id="aclassInitialState_html_add03e0c816c38ed3477318ee51a649cf"><div class="ttname"><a href="classInitialState.html#add03e0c816c38ed3477318ee51a649cf">InitialState::mInterval</a></div><div class="ttdeci">unsigned long mInterval</div><div class="ttdoc">This member holds the original interval value.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00028">TaskSched.h:28</a></div></div>
+<div class="ttc" id="aclassInitialState_html_a0a23c5447f2dadf65baaff2cfa1a274f"><div class="ttname"><a href="classInitialState.html#a0a23c5447f2dadf65baaff2cfa1a274f">InitialState::mEnabled</a></div><div class="ttdeci">bool mEnabled</div><div class="ttdoc">saved enable flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00031">TaskSched.h:31</a></div></div>
+<div class="ttc" id="aclassInitialState_html_a25cd6538cde791f1897a86f322960293"><div class="ttname"><a href="classInitialState.html#a25cd6538cde791f1897a86f322960293">InitialState::mIterations</a></div><div class="ttdeci">unsigned long mIterations</div><div class="ttdoc">saved run iterations count</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00041">TaskSched.h:41</a></div></div>
+<div class="ttc" id="aclassInitialState_html_a31fee8f68667d2a32b5b884cc50aa2f7"><div class="ttname"><a href="classInitialState.html#a31fee8f68667d2a32b5b884cc50aa2f7">InitialState::mRunImmediately</a></div><div class="ttdeci">bool mRunImmediately</div><div class="ttdoc">saved run immediately flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00036">TaskSched.h:36</a></div></div>
+<div class="ttc" id="aclassInitialState_html_add03e0c816c38ed3477318ee51a649cf"><div class="ttname"><a href="classInitialState.html#add03e0c816c38ed3477318ee51a649cf">InitialState::mInterval</a></div><div class="ttdeci">unsigned long mInterval</div><div class="ttdoc">This member holds the original interval value.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00027">TaskSched.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00032">InitialState::mEnabled</a>, <a class="el" href="TaskSched_8h_source.html#l00028">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00042">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00037">InitialState::mRunImmediately</a>.</p>
+<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00031">InitialState::mEnabled</a>, <a class="el" href="TaskSched_8h_source.html#l00027">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00041">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00036">InitialState::mRunImmediately</a>.</p>
 
 </div>
 </div>
@@ -389,7 +383,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            mIterationCount=0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00032">InitialState::mEnabled</a>, <a class="el" href="TaskSched_8h_source.html#l00028">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00042">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00037">InitialState::mRunImmediately</a>.</p>
+<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00031">InitialState::mEnabled</a>, <a class="el" href="TaskSched_8h_source.html#l00027">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00041">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00036">InitialState::mRunImmediately</a>.</p>
 
 </div>
 </div>
@@ -418,8 +412,6 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>.</p>
-
 </div>
 </div>
 <a id="ae98967d438138cce890d6520e0b5426c"></a>
@@ -486,7 +478,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> String(res); </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00072">showInit()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00072">showInit()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
 </div>
 </div>
@@ -534,7 +526,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> mInterval;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
 </div>
 </div>
@@ -587,7 +579,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> mLastStartTime;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +606,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> mName;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00308">Sched::addTask()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00329">Sched::run()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
 </div>
 </div>
@@ -642,42 +634,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> mRunImmediately;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
-</div>
-</div>
-<a id="a1f125560c0150c8d13a1d489f866e288"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f125560c0150c8d13a1d489f866e288">&#9670;&nbsp;</a></span>getSafePtr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classSafePtr.html">SafePtr</a>&lt;<a class="el" href="classTask.html">Task</a>&gt; Task::getSafePtr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a <a class="el" href="classSafePtr.html" title="A safe pointer template class.">SafePtr</a> to this <a class="el" href="classTask.html" title="Represents a schedulable task.">Task</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>SafePtr&lt;Task&gt; A safe pointer to this <a class="el" href="classTask.html" title="Represents a schedulable task.">Task</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00163">163</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                               {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSafePtr.html">SafePtr&lt;Task&gt;</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="ttc" id="aclassSafePtr_html"><div class="ttname"><a href="classSafePtr.html">SafePtr</a></div><div class="ttdoc">A safe pointer template class.</div><div class="ttdef"><b>Definition:</b> <a href="SafePtr_8h_source.html#l00020">SafePtr.h:20</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a781139778e9b5c1dbe4f58e4facca649"></a>
@@ -703,7 +661,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> mEnabled;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00196">runIt()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00247">Sched::displayStatus()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00329">Sched::run()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00102">showTaskInfo()</a>.</p>
 
 </div>
 </div>
@@ -797,72 +755,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00028">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00042">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00037">InitialState::mRunImmediately</a>.</p>
-
-</div>
-</div>
-<a id="a3182ff28134356c7502d09d533cdf267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3182ff28134356c7502d09d533cdf267">&#9670;&nbsp;</a></span>runIt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Task::runIt </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>function used by the schedule to run this task, shouldn't be called by user </p>
-
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00196">196</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                 {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classTask.html#a781139778e9b5c1dbe4f58e4facca649">isEnabled</a>()) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> ((mRunImmediately &amp;&amp; mIterationCount == 0) || (millis() - mLastStartTime) &gt; mInterval) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        mRunImmediately = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> diff = millis() - <a class="code" href="classTask.html#ae6ab72b28f526a94ec956e344e4a0f65">getLastStartTime</a>();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        String sDiff= <a class="code" href="classTask.html#a6fea462a4230640e52b3d5a6bd4f04b1">formatMS</a>(diff);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        String sInt= <a class="code" href="classTask.html#a6fea462a4230640e52b3d5a6bd4f04b1">formatMS</a>(<a class="code" href="classTask.html#a3d9e8c21e6672421fd6ee1ffca2209a5">getInterval</a>());</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        Serial.printf(<span class="stringliteral">&quot;%s %d Task %s, Enabled? %d, Diff %s, Interval %s, RI %d\n&quot;</span>,__FILE__,__LINE__,<a class="code" href="classTask.html#a5c551b1fda4f0fa39e8c5ebb15c79a8c">getName</a>().c_str(),<a class="code" href="classTask.html#a781139778e9b5c1dbe4f58e4facca649">isEnabled</a>(),sDiff.c_str(),sInt.c_str(),<a class="code" href="classTask.html#a55abb5e8c1ec46f537563a9bac971876">getRunImmediately</a>());</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">if</span> (mWithTaskPtr &amp;&amp; mProcWithTask) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            mProcWithTask(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!mWithTaskPtr &amp;&amp; mProcVoid) {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            mProcVoid();</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        ++(mIterationCount);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        Serial.printf(<span class="stringliteral">&quot;%s %d %s in runit iteration count is %ld, max is %ld\n&quot;</span>,__FILE__,__LINE__,<a class="code" href="classTask.html#a5c551b1fda4f0fa39e8c5ebb15c79a8c">getName</a>().c_str(),mIterationCount,mIterations);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">if</span>(mIterationCount&gt;=mIterations &amp;&amp; mIterations != 0) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <a class="code" href="classTask.html#ae1b427d535011c4535b2026d3cd180a9">disable</a>();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            mLastStartTime=millis();</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">//        Serial.printf(&quot;%s in runit count is %ld\n&quot;,getName(),mIterationCount);</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
-<div class="ttc" id="aclassTask_html_a3d9e8c21e6672421fd6ee1ffca2209a5"><div class="ttname"><a href="classTask.html#a3d9e8c21e6672421fd6ee1ffca2209a5">Task::getInterval</a></div><div class="ttdeci">unsigned long getInterval(void)</div><div class="ttdoc">return the task interval</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00182">TaskSched.cpp:182</a></div></div>
-<div class="ttc" id="aclassTask_html_a55abb5e8c1ec46f537563a9bac971876"><div class="ttname"><a href="classTask.html#a55abb5e8c1ec46f537563a9bac971876">Task::getRunImmediately</a></div><div class="ttdeci">bool getRunImmediately(void)</div><div class="ttdoc">return the run immediately flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00177">TaskSched.cpp:177</a></div></div>
-<div class="ttc" id="aclassTask_html_a5c551b1fda4f0fa39e8c5ebb15c79a8c"><div class="ttname"><a href="classTask.html#a5c551b1fda4f0fa39e8c5ebb15c79a8c">Task::getName</a></div><div class="ttdeci">String getName()</div><div class="ttdoc">return string containing name of task</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00050">TaskSched.cpp:50</a></div></div>
-<div class="ttc" id="aclassTask_html_a6fea462a4230640e52b3d5a6bd4f04b1"><div class="ttname"><a href="classTask.html#a6fea462a4230640e52b3d5a6bd4f04b1">Task::formatMS</a></div><div class="ttdeci">String formatMS(unsigned long milliseconds)</div><div class="ttdoc">return a string with a formatted time</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00087">TaskSched.cpp:87</a></div></div>
-<div class="ttc" id="aclassTask_html_a781139778e9b5c1dbe4f58e4facca649"><div class="ttname"><a href="classTask.html#a781139778e9b5c1dbe4f58e4facca649">Task::isEnabled</a></div><div class="ttdeci">bool isEnabled()</div><div class="ttdoc">return true if task is enabled</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00123">TaskSched.cpp:123</a></div></div>
-<div class="ttc" id="aclassTask_html_ae1b427d535011c4535b2026d3cd180a9"><div class="ttname"><a href="classTask.html#ae1b427d535011c4535b2026d3cd180a9">Task::disable</a></div><div class="ttdeci">void disable()</div><div class="ttdoc">disable the task</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00066">TaskSched.cpp:66</a></div></div>
-<div class="ttc" id="aclassTask_html_ae6ab72b28f526a94ec956e344e4a0f65"><div class="ttname"><a href="classTask.html#ae6ab72b28f526a94ec956e344e4a0f65">Task::getLastStartTime</a></div><div class="ttdeci">unsigned long getLastStartTime(void)</div><div class="ttdoc">return the last start time flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00187">TaskSched.cpp:187</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="TaskSched_8cpp_source.html#l00066">disable()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00087">formatMS()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00182">getInterval()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00187">getLastStartTime()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00050">getName()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00177">getRunImmediately()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00123">isEnabled()</a>.</p>
+<p class="reference">References <a class="el" href="TaskSched_8h_source.html#l00027">InitialState::mInterval</a>, <a class="el" href="TaskSched_8h_source.html#l00041">InitialState::mIterations</a>, and <a class="el" href="TaskSched_8h_source.html#l00036">InitialState::mRunImmediately</a>.</p>
 
 </div>
 </div>
@@ -1062,8 +955,11 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="ttc" id="aclassTask_html_a6fea462a4230640e52b3d5a6bd4f04b1"><div class="ttname"><a href="classTask.html#a6fea462a4230640e52b3d5a6bd4f04b1">Task::formatMS</a></div><div class="ttdeci">String formatMS(unsigned long milliseconds)</div><div class="ttdoc">return a string with a formatted time</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00087">TaskSched.cpp:87</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TaskSched_8cpp_source.html#l00087">formatMS()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TaskSched_8cpp_source.html#l00329">Sched::run()</a>.</p>
 
 </div>
 </div>
@@ -1106,27 +1002,38 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="ttc" id="aclassTask_html_a3d9e8c21e6672421fd6ee1ffca2209a5"><div class="ttname"><a href="classTask.html#a3d9e8c21e6672421fd6ee1ffca2209a5">Task::getInterval</a></div><div class="ttdeci">unsigned long getInterval(void)</div><div class="ttdoc">return the task interval</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00182">TaskSched.cpp:182</a></div></div>
+<div class="ttc" id="aclassTask_html_a55abb5e8c1ec46f537563a9bac971876"><div class="ttname"><a href="classTask.html#a55abb5e8c1ec46f537563a9bac971876">Task::getRunImmediately</a></div><div class="ttdeci">bool getRunImmediately(void)</div><div class="ttdoc">return the run immediately flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00177">TaskSched.cpp:177</a></div></div>
+<div class="ttc" id="aclassTask_html_a5c551b1fda4f0fa39e8c5ebb15c79a8c"><div class="ttname"><a href="classTask.html#a5c551b1fda4f0fa39e8c5ebb15c79a8c">Task::getName</a></div><div class="ttdeci">String getName()</div><div class="ttdoc">return string containing name of task</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00050">TaskSched.cpp:50</a></div></div>
+<div class="ttc" id="aclassTask_html_a781139778e9b5c1dbe4f58e4facca649"><div class="ttname"><a href="classTask.html#a781139778e9b5c1dbe4f58e4facca649">Task::isEnabled</a></div><div class="ttdeci">bool isEnabled()</div><div class="ttdoc">return true if task is enabled</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00123">TaskSched.cpp:123</a></div></div>
+<div class="ttc" id="aclassTask_html_ae6ab72b28f526a94ec956e344e4a0f65"><div class="ttname"><a href="classTask.html#ae6ab72b28f526a94ec956e344e4a0f65">Task::getLastStartTime</a></div><div class="ttdeci">unsigned long getLastStartTime(void)</div><div class="ttdoc">return the last start time flag</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00187">TaskSched.cpp:187</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TaskSched_8cpp_source.html#l00087">formatMS()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00182">getInterval()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00187">getLastStartTime()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00050">getName()</a>, <a class="el" href="TaskSched_8cpp_source.html#l00177">getRunImmediately()</a>, and <a class="el" href="TaskSched_8cpp_source.html#l00123">isEnabled()</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5b560ef95d5ba654ed98b28ef84eefb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b560ef95d5ba654ed98b28ef84eefb7">&#9670;&nbsp;</a></span>mIntI</h2>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a1c394471833feb83c62bedb9ee3c0c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c394471833feb83c62bedb9ee3c0c50">&#9670;&nbsp;</a></span>Sched</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Task::mIntI</td>
+          <td class="memname">friend class <a class="el" href="classSched.html">Sched</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Usage:</p>
-<p>SaafePtr&lt;Task&gt; createTask( parameters ) { Task* rawTask = new <a class="el" href="classTask.html" title="Represents a schedulable task.">Task( parameters )</a>; return rawTask-&gt;getSaafePtr(); } </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00179">179</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8h_source.html#l00088">88</a> of file <a class="el" href="TaskSched_8h_source.html">TaskSched.h</a>.</p>
 
 </div>
 </div>

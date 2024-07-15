@@ -108,7 +108,7 @@ class SimpleList&lt; T &gt;::iterator</h3>
 
 <p>Iterator class for <a class="el" href="classSimpleList.html" title="A simple linked list implementation.">SimpleList</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00138">138</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00137">137</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a16eb08e50f91f351f9e4e5ebf0d2b299"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16eb08e50f91f351f9e4e5ebf0d2b299">&#9670;&nbsp;</a></span>iterator() <span class="overload">[1/2]</span></h2>
@@ -137,8 +137,8 @@ template&lt;typename T &gt; </div>
 
 <p>Construct a new iterator object. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00146">146</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;: current(<span class="keyword">nullptr</span>) {}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00145">145</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;: current(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -176,8 +176,8 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00153">153</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;: current(node) {}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00152">152</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;: current(node) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,8 +217,8 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the iterators are not equal, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00182">182</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{ <span class="keywordflow">return</span> current != other.current; }</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00181">181</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{ <span class="keywordflow">return</span> current != other.current; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -250,8 +250,8 @@ template&lt;typename T &gt; </div>
 <p>Dereference operator. </p>
 <dl class="section return"><dt>Returns</dt><dd>T&amp; Reference to the data in the current node </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00160">160</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{ <span class="keywordflow">return</span> current-&gt;data; }</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00159">159</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{ <span class="keywordflow">return</span> current-&gt;data; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -283,8 +283,8 @@ template&lt;typename T &gt; </div>
 <p>Prefix increment operator. </p>
 <dl class="section return"><dt>Returns</dt><dd>iterator&amp; Reference to the incremented iterator </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00174">174</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{ <span class="keywordflow">if</span> (current) current = current-&gt;next; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00173">173</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{ <span class="keywordflow">if</span> (current) current = current-&gt;next; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,8 +316,8 @@ template&lt;typename T &gt; </div>
 <p>Arrow operator. </p>
 <dl class="section return"><dt>Returns</dt><dd>T* Pointer to the data in the current node </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00167">167</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{ <span class="keywordflow">return</span> &amp;current-&gt;data; }</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00166">166</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{ <span class="keywordflow">return</span> &amp;current-&gt;data; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,8 +356,8 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the iterators are equal, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00190">190</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{ <span class="keywordflow">return</span> current == other.current; }</div>
+<p class="definition">Definition at line <a class="el" href="SimpleList_8h_source.html#l00189">189</a> of file <a class="el" href="SimpleList_8h_source.html">SimpleList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{ <span class="keywordflow">return</span> current == other.current; }</div>
 </div><!-- fragment -->
 </div>
 </div>

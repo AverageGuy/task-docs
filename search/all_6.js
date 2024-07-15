@@ -7,7 +7,6 @@ var searchData=
   ['getlaststarttime_14',['getLastStartTime',['../classTask.html#ae6ab72b28f526a94ec956e344e4a0f65',1,'Task']]],
   ['getname_15',['getName',['../classTask.html#a5c551b1fda4f0fa39e8c5ebb15c79a8c',1,'Task']]],
   ['getrunimmediately_16',['getRunImmediately',['../classTask.html#a55abb5e8c1ec46f537563a9bac971876',1,'Task']]],
-  ['getsafeptr_17',['getSafePtr',['../classTask.html#a1f125560c0150c8d13a1d489f866e288',1,'Task']]],
-  ['getsize_18',['getSize',['../classSched.html#a5fabf124d2c8b0e39470191118c6780e',1,'Sched']]],
-  ['gettasks_19',['getTasks',['../classSched.html#ad4b9afbeca8f7e6275cea4907abe0861',1,'Sched']]]
+  ['getsize_17',['getSize',['../classSched.html#a5fabf124d2c8b0e39470191118c6780e',1,'Sched']]],
+  ['gettasks_18',['getTasks',['../classSched.html#a02d4d4d1d4e2084ead210f0fe1fbbb75',1,'Sched']]]
 ];
