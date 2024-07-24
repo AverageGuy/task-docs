@@ -124,41 +124,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor</p>
-<pre class="fragment">  if taskName non-blank, Display info for the task with that name and ignore num setting.
+<p>Constructor </p>
 
-  if taskName is blank, then
-
-  num &gt;0 show status of &lt;num&gt; tasks, 
-
-  num = 0 show status of enabled tasks only
-
-  if taskName != "" ignore num setting
-</pre><p> String Sched::displayStatus(int num,String taskName,bool raw) { static char printBuffer[1000]; // used to display status</p>
-<p>char temp[1000]; strcpy(temp,""); SimpleList&lt;Task *&gt;::iterator it; sprintf(printBuffer, "%s", ""); int cnt = 0; for (it = tTasks.begin(); it != tTasks.end(); ++it) { Task* currentTask = *it; //</p>
-<pre class="fragment">    unsigned long diff = millis() - currentTask-&gt;getLastStartTime();
-    String sDiff= Task::formatMS(diff);
-    char sint[32];
-    if(raw) {
-        sprintf(sint,"%ld",  currentTask-&gt;getInterval());
-    } else {
-        String sIntx= Task::formatMS(currentTask-&gt;getInterval());
-        strcpy(sint,sIntx.c_str());
-    }
-    String sInt(sint);
-    if(taskName!="") {
-        String name = currentTask-&gt;getName();
-        if(taskName == name) {
-            sprintf(temp,"%d Task %s, Enabled? %d, Diff %s, Interval %s, RI %d\n",cnt,currentTask-&gt;getName().c_str(),currentTask-&gt;isEnabled(),sDiff.c_str(),sInt.c_str(),currentTask-&gt;getRunImmediately());
-            strcat(printBuffer,temp);
-        }
-    } else if(!num &amp;&amp; currentTask-&gt;isEnabled()) {
-        if(!currentTask-&gt;isEnabled()) {
-</pre><p> Serial.printf("Skip %x\n",currentTask); continue; } sprintf(temp,"Task %s, Enabled? %d Diff %s, Interval %s, RI %d\n",currentTask-&gt;getName(),currentTask-&gt;<a class="el" href="classSched.html#a4f2f56a7f6fda2d669c96a8dcd45f271" title="return true if the scheduler is enabled">isEnabled()</a>,sDiff,sInt,currentTask-&gt;getRunImmediately()); cnt++; sprintf(temp,"%d Task %s, Enabled? %d, Diff %s, Interval %s, RI %d\n",cnt,currentTask-&gt;getName().c_str(),currentTask-&gt;<a class="el" href="classSched.html#a4f2f56a7f6fda2d669c96a8dcd45f271" title="return true if the scheduler is enabled">isEnabled()</a>,sDiff.c_str(),sInt.c_str(),currentTask-&gt;getRunImmediately()); Serial.printf("  Temp %s\n",temp); Serial.printf("%ld dif %s\n",<b>LINE</b>, sDiff.c_str()); strcat(printBuffer,temp); } else if(num) { if(cnt&gt;num) { break; } sprintf(temp,"Task %9s,  Enabled? %d, Diff %s, Interval %s, RI %d\n", currentTask-&gt;getName().c_str(), currentTask-&gt;<a class="el" href="classSched.html#a4f2f56a7f6fda2d669c96a8dcd45f271" title="return true if the scheduler is enabled">isEnabled()</a>,sDiff.c_str(),sInt.c_str(),currentTask-&gt;getRunImmediately()); sprintf(temp,"Task %s, Diff %lu, Interval %lu, enabled %d, RI %d\n",currentTask-&gt;getName(),diff,currentTask-&gt;getInterval(),currentTask-&gt;<a class="el" href="classSched.html#a4f2f56a7f6fda2d669c96a8dcd45f271" title="return true if the scheduler is enabled">isEnabled()</a>,currentTask-&gt;getRunImmediately()); Serial.printf("%ld dif %s\n",<b>LINE</b>, sDiff.c_str()); if(strlen(temp)+strlen(printBuffer)&lt;999) { strcat(printBuffer,temp); } } } String retStr(printBuffer); return retStr; } </p>
-
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00303">303</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;             {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00238">238</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;             {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -188,14 +158,14 @@ Public Member Functions</h2></td></tr>
 <div class="line">    scheduler.addTask(&amp;t1);</div>
 <div class="line">    scheduler.addTask(&amp;t2);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00309">309</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    Serial.printf(<span class="stringliteral">&quot;add called for task, %s %x\n&quot;</span>,task-&gt;<a class="code" href="classTask.html#a54091f59b9aa6f4904c77d8026ae8fd8">getName</a>().c_str(),task);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    tTasks.<a class="code" href="classSimpleList.html#a02211bf8584c6f0f4c802d46edd08691">push_back</a>(task);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00244">244</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;{</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    Serial.printf(<span class="stringliteral">&quot;add called for task, %s %x\n&quot;</span>,task-&gt;<a class="code" href="classTask.html#a54091f59b9aa6f4904c77d8026ae8fd8">getName</a>().c_str(),task);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    tTasks.<a class="code" href="classSimpleList.html#a02211bf8584c6f0f4c802d46edd08691">push_back</a>(task);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;};</div>
 <div class="ttc" id="aclassSimpleList_html_a02211bf8584c6f0f4c802d46edd08691"><div class="ttname"><a href="classSimpleList.html#a02211bf8584c6f0f4c802d46edd08691">SimpleList::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value)</div><div class="ttdoc">Add a new element to the end of the list.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleList_8h_source.html#l00051">SimpleList.h:51</a></div></div>
 <div class="ttc" id="aclassTask_html_a54091f59b9aa6f4904c77d8026ae8fd8"><div class="ttname"><a href="classTask.html#a54091f59b9aa6f4904c77d8026ae8fd8">Task::getName</a></div><div class="ttdeci">String getName() const</div><div class="ttdoc">return string containing name of task</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00050">TaskSched.cpp:50</a></div></div>
 </div><!-- fragment -->
@@ -220,12 +190,12 @@ Public Member Functions</h2></td></tr>
 <p>used to start the scheduling. A call to begin will also enable the scheduler. </p><div class="fragment"><div class="line"><a class="code" href="classSched.html">Sched</a> scheduler;  </div>
 <div class="line">    scheduler.<a class="code" href="classSched.html#a76421d3e33bc7d6f64a0acc97f9a456d">begin</a>();</div>
 <div class="ttc" id="aclassSched_html"><div class="ttname"><a href="classSched.html">Sched</a></div><div class="ttdoc">This class runs the scheduled tasks.</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8h_source.html#l00279">TaskSched.h:280</a></div></div>
-<div class="ttc" id="aclassSched_html_a76421d3e33bc7d6f64a0acc97f9a456d"><div class="ttname"><a href="classSched.html#a76421d3e33bc7d6f64a0acc97f9a456d">Sched::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00306">TaskSched.cpp:306</a></div></div>
+<div class="ttc" id="aclassSched_html_a76421d3e33bc7d6f64a0acc97f9a456d"><div class="ttname"><a href="classSched.html#a76421d3e33bc7d6f64a0acc97f9a456d">Sched::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00241">TaskSched.cpp:241</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00306">306</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                  {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00241">241</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                  {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,10 +216,10 @@ Public Member Functions</h2></td></tr>
 
 <p>disable the scheduler </p>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00321">321</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">false</span>;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00256">256</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,10 +240,10 @@ Public Member Functions</h2></td></tr>
 
 <p>enable the scheduler </p>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00318">318</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                   {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00253">253</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                   {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    this-&gt;mSchedEnabled=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,10 +291,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>brief </p>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00355">355</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> tTasks;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00290">290</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> tTasks;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -346,10 +316,10 @@ Public Member Functions</h2></td></tr>
 <p>return true if the scheduler is enabled </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00324">324</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                      {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> this-&gt;mSchedEnabled;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00259">259</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                      {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> this-&gt;mSchedEnabled;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -370,30 +340,30 @@ Public Member Functions</h2></td></tr>
 
 <p>called perodically to check if a task should be scheduled </p>
 
-<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00330">330</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span>(this-&gt;mSchedEnabled) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">//                Serial.println(&quot;Looking for tasks&quot;);</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = tTasks.<a class="code" href="classSimpleList.html#a70b225796579f3c9edc799abf2f63b8e">begin</a>(); it != tTasks.<a class="code" href="classSimpleList.html#ae7f774f3a9d6f673e2286c21970d8209">end</a>(); ++it) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; <span class="comment">//       for (it = tTasks.begin(); it != tTasks.end(); ++it){</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="classTask.html">Task</a>* currentTask = *it;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#ifdef DEBUGR</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            Serial.printf(<span class="stringliteral">&quot;%s %d task=%x i=%d millis()=%ld Found name=%s, Is enabled? %d\n&quot;</span>,__FILE__,__LINE__,currentTask,i++,millis(),currentTask-&gt;<a class="code" href="classTask.html#a54091f59b9aa6f4904c77d8026ae8fd8">getName</a>().c_str(),currentTask-&gt;<a class="code" href="classTask.html#a950d5e6b9cc7e5a6964d8a03f89eeae3">isEnabled</a>());</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            currentTask-&gt;<a class="code" href="classTask.html#a44a50f64103623564e81c51a2a54986e">showInit</a>();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">if</span>(currentTask-&gt;<a class="code" href="classTask.html#a950d5e6b9cc7e5a6964d8a03f89eeae3">isEnabled</a>()) {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                currentTask-&gt;runIt(); </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        Serial.println(<span class="stringliteral">&quot;Not enabled&quot;</span>);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TaskSched_8cpp_source.html#l00265">265</a> of file <a class="el" href="TaskSched_8cpp_source.html">TaskSched.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">if</span>(this-&gt;mSchedEnabled) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">//                Serial.println(&quot;Looking for tasks&quot;);</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = tTasks.<a class="code" href="classSimpleList.html#a70b225796579f3c9edc799abf2f63b8e">begin</a>(); it != tTasks.<a class="code" href="classSimpleList.html#ae7f774f3a9d6f673e2286c21970d8209">end</a>(); ++it) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; <span class="comment">//       for (it = tTasks.begin(); it != tTasks.end(); ++it){</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <a class="code" href="classTask.html">Task</a>* currentTask = *it;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#ifdef DEBUGR</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            Serial.printf(<span class="stringliteral">&quot;%s %d task=%x i=%d millis()=%ld Found name=%s, Is enabled? %d\n&quot;</span>,__FILE__,__LINE__,currentTask,i++,millis(),currentTask-&gt;<a class="code" href="classTask.html#a54091f59b9aa6f4904c77d8026ae8fd8">getName</a>().c_str(),currentTask-&gt;<a class="code" href="classTask.html#a950d5e6b9cc7e5a6964d8a03f89eeae3">isEnabled</a>());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            currentTask-&gt;<a class="code" href="classTask.html#a44a50f64103623564e81c51a2a54986e">showInit</a>();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">if</span>(currentTask-&gt;<a class="code" href="classTask.html#a950d5e6b9cc7e5a6964d8a03f89eeae3">isEnabled</a>()) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                currentTask-&gt;runIt(); </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        Serial.println(<span class="stringliteral">&quot;Not enabled&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="aclassSimpleList_html_a70b225796579f3c9edc799abf2f63b8e"><div class="ttname"><a href="classSimpleList.html#a70b225796579f3c9edc799abf2f63b8e">SimpleList::begin</a></div><div class="ttdeci">iterator begin() const</div><div class="ttdoc">Get an iterator pointing to the beginning of the list.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleList_8h_source.html#l00273">SimpleList.h:273</a></div></div>
 <div class="ttc" id="aclassSimpleList_html_ae7f774f3a9d6f673e2286c21970d8209"><div class="ttname"><a href="classSimpleList.html#ae7f774f3a9d6f673e2286c21970d8209">SimpleList::end</a></div><div class="ttdeci">iterator end() const</div><div class="ttdoc">Get an iterator pointing to the end of the list.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleList_8h_source.html#l00280">SimpleList.h:280</a></div></div>
 <div class="ttc" id="aclassTask_html_a44a50f64103623564e81c51a2a54986e"><div class="ttname"><a href="classTask.html#a44a50f64103623564e81c51a2a54986e">Task::showInit</a></div><div class="ttdeci">void showInit()</div><div class="ttdoc">display stuff</div><div class="ttdef"><b>Definition:</b> <a href="TaskSched_8cpp_source.html#l00072">TaskSched.cpp:72</a></div></div>
